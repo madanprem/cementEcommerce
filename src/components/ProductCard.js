@@ -18,11 +18,11 @@ const ProductCard = ({ product, addToCart }) => {
         <input 
           type="number" 
           value={quantity} 
-          min="1"
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
+          onChange={(e) => setQuantity(parseInt(e.target.value))} 
+          min="1" 
         />
+        <button onClick={handleAddToCart}>Add to Cart</button>
       </div>
-      <button onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };
