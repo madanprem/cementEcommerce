@@ -1,12 +1,16 @@
 // src/components/ProductList.js
 import React from 'react';
-import { products } from '../data';
 import ProductCard from './ProductCard';
+import { products } from '../data';
+const ProductList = ({ addToCart, selectedCategory }) => {
 
-const ProductList = ({ addToCart }) => {
+  const filteredProducts = selectedCategory
+    ? products.filter(product => product.category === selectedCategory)
+    : products;
+
   return (
     <div className="product-list">
-      {products.map(product => (
+      {filteredProducts.map(product => (
         <ProductCard key={product.id} product={product} addToCart={addToCart} />
       ))}
     </div>

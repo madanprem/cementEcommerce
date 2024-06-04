@@ -1,8 +1,8 @@
 // src/components/Dashboard.js
 import React from 'react';
-import './Dashboard.css'; // Import the styles for the dashboard
+import './Dashboard.css';
 
-const Dashboard = ({ showCart, setShowCart }) => {
+const Dashboard = ({ showCart, setShowCart, setSelectedCategory }) => {
   return (
     <nav className="dashboard">
       <div className="logo-and-name">
@@ -14,8 +14,11 @@ const Dashboard = ({ showCart, setShowCart }) => {
         <li className="dropdown">
           <a href="#categories" className="dropbtn">Categories</a>
           <div className="dropdown-content">
-            <a href="#steel">Steel</a>
-            <a href="#cement">Cement</a>
+            <a href="#steel" onClick={() => setSelectedCategory('Steel')}>Steel</a>
+            <a href="#cement" onClick={() => setSelectedCategory('Cement')}>Cement</a>
+            <a href="#bindingwire" onClick={() => setSelectedCategory('Bindingwire')}>Bindingwire</a>
+            <a href="#coveringBox" onClick={() => setSelectedCategory('CoveringBox')}>CoveringBox</a>
+
           </div>
         </li>
         <li><a href="#signin">Sign In</a></li>

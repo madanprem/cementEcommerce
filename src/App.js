@@ -6,10 +6,12 @@ import Dashboard from './components/Dashboard';
 import Cart from './components/Cart';
 import CheckoutForm from './components/CheckoutForm';
 import Footer from './components/Footer'
+
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(''); // State to track selected category
 
   const addToCart = (product, quantity) => {
     setCartItems(prevItems => {
@@ -32,8 +34,7 @@ const App = () => {
   const handleSubmitOrder = (details) => {
     alert(`Order placed successfully! Details: ${JSON.stringify(details)}`);
     setShowCheckout(false);
-    // Clear the cart after successful order
-    setCartItems([]);
+    setCartItems([]); // Clear the cart after successful order
   };
 
   return (
@@ -41,13 +42,13 @@ const App = () => {
       <header>
         <h1>New JMJ Teel Traders</h1>
       </header>
-      <Dashboard showCart={showCart} setShowCart={setShowCart} />
+      <Dashboard showCart={showCart} setShowCart={setShowCart} setSelectedCategory={setSelectedCategory} />
       {showCheckout ? (
         <CheckoutForm onSubmit={handleSubmitOrder} />
       ) : showCart ? (
         <Cart cartItems={cartItems} onCheckout={handleCheckout} />
       ) : (
-        <ProductList addToCart={addToCart} />
+        <ProductList addToCart={addToCart} selectedCategory={selectedCategory} />
       )}
       <Footer/>
     </div>
