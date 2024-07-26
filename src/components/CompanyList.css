@@ -1,0 +1,18 @@
+/* src/components/CompanyList.css */
+.company-list {
+    margin: 10px 0;
+  }
+  
+  .company h3 {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .sizes {
+    margin-left: 20px;
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+  }
+  

@@ -18,7 +18,6 @@ const Dashboard = ({ showCart, setShowCart, setSelectedCategory }) => {
             <a href="#cement" onClick={() => setSelectedCategory('Cement')}>Cement</a>
             <a href="#bindingwire" onClick={() => setSelectedCategory('Bindingwire')}>Bindingwire</a>
             <a href="#coveringBox" onClick={() => setSelectedCategory('CoveringBox')}>CoveringBox</a>
-
           </div>
         </li>
         <li><a href="#signin">Sign In</a></li>
